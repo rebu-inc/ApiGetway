@@ -31,6 +31,15 @@ import {
 } from './ruteame_api_gateway/Usuarios/typeDefs';
 
 
+//Juan Sebastian (PQR)__________________________________
+import {
+	PQRTypeDef,
+	PQRQueries,
+	PQRMutations
+} from './ruteame_api_gateway/PQR/typedefs';
+
+
+import PQRResolvers from './ruteame_api_gateway/PQR/resolvers';
 import UsuariosResolvers from './ruteame_api_gateway/Usuarios/resolvers';
 import busquedasResolvers from './ruteame_api_gateway/busquedas/resolvers';
 import informeResolvers from './ruteame_api_gateway/informe/resolvers';
@@ -39,18 +48,21 @@ import accionesUsuarioResolvers from './ruteame_api_gateway/acciones_usuario/res
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
+		PQRTypeDef,
 		UsuariosTypeDef,
 		rutasTypeDef,
 		informeTypeDef,
 		accionesUsuarioTypeDef
 	],
 	[
+		PQRQueries,
 		UsuariosQueries,
 		rutasQueries,
 		informeQueries,
 		accionesUsuarioQueries
 	],
 	[
+		PQRMutations,
 		UsuariosMutations,
 		accionesUsuarioMutations
 	]
@@ -62,6 +74,7 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
+		PQRResolvers,
 		UsuariosResolvers,
 		busquedasResolvers,
 		informeResolvers,
