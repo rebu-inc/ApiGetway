@@ -42,13 +42,13 @@ export const BillingTypeDef = `
         message: String!
     }
 
-    type DeleteMessage {
-        message: String!
-    }
-    type TestMessage {
-        message: String!
-    }
-    `;
+type DeleteMessage {
+    message: String!
+}
+type TestMessage {
+    message: String!
+}
+`;
 
 
 export const BillingQueries = `
@@ -58,5 +58,6 @@ export const BillingQueries = `
 `;
 export const BillingMutations = `
     addBilling(billing: BillingDataCreate!): BillCreate
+
     deleteBilling(id: Int!): DeleteMessage!
 `;
