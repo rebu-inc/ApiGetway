@@ -1,4 +1,53 @@
 *************************************************
+============ Billing ============================
+
+--- Listar Billings ---
+query{
+  getListBilling{
+    id
+    user_id
+    status
+    registDate
+    line_items {
+      id
+      item_id
+      quantity
+    }
+    payment {
+      id
+      paymentType
+      amount
+    }
+  }
+}
+
+query{
+  getBillingById(id:1){
+    id
+    user_id
+    status
+    registDate
+    line_items {
+      id
+      item_id
+      quantity
+    }
+    payment {
+      id
+      paymentType
+      amount
+    }
+  }
+}
+
+query{
+  getTestBilling{
+    message
+  }
+}
+
+
+*************************************************
 ===== Busqueda ====
 
 --- Obtener ruta ---

@@ -1,7 +1,7 @@
 import { generalRequest, getRequest } from '../../utilities';
 import { url, port} from './server';
 
-const URL = `http://${url}`;
+const URL = `${url}`;
 const Listar='listbilling';
 const DeleteBill='deletebilling';
 const Lista='billing';
@@ -13,7 +13,7 @@ const resolvers = {
 		getListBilling:(_)=> //endpoint para traer registros
 			generalRequest(`${URL}/api/${Listar}`, 'GET'),
 		getBillingById:(_, { id })=> //endpoint para traer una billing
-			generalRequest(`${URL}/${Lista}/${id}`, 'GET'),
+			generalRequest(`${URL}/api/${Lista}/${id}`, 'GET'),
 		getTestBilling:(_)=> //endpoint para traer registros
 			generalRequest(`${URL}/api/${Test}`, 'GET'),
 	},
