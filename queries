@@ -46,6 +46,19 @@ query{
   }
 }
 
+--- Crear Billing ---
+mutation{
+  addBilling(billing:{user_id:4 status:"pendiente" registDate:"2022-01-18T10:45:18.000+00:00" line_items:{item_id: 2 quantity: 12} payment:{paymentType: "tarjeta débito" amount: "23000"}}){
+    id
+  }
+}
+
+--- Borrar billing ---
+mutation{
+  deleteBilling(id:4){
+    message
+  }
+}
 
 *************************************************
 ===== Busqueda ====
