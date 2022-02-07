@@ -11,4 +11,5 @@ COPY . /ruteame_api_gateway/
 
 RUN npm run prepublish
 
+#RUN npm run prepublish
 CMD [ "npm", "run", "runServer" ]

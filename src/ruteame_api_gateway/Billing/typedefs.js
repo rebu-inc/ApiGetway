@@ -30,7 +30,6 @@ export const BillingTypeDef = `
     }
 
     input BillingDataCreate {
-        id: Int!
         user_id: Int
         status: String
         registDate: String
@@ -38,8 +37,7 @@ export const BillingTypeDef = `
         payment: [PaymentInput]
     }
     type BillCreate {
-        ID: Int!
-        message: String!
+        id: Int
     }
 
 type DeleteMessage {
