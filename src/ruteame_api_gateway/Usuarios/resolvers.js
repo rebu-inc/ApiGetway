@@ -2,7 +2,7 @@ import { generalRequest, getRequest } from '../../utilities';
 import { url, port} from './server';
 
 const URL = `http://${url}:${port}`;
-const Lista='users';
+const Lista='user';
 const auth='auth';
 const Login='login';
 

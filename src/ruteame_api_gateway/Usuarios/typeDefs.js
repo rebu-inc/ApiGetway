@@ -1,17 +1,18 @@
 export const UsuariosTypeDef = `
 type Users1 {
     id: Int!
-    username: String!
+    name: String!
+    email: String!
     password: String!
+    cellphone: Int!
 }
 input UserDataCreate {
-    username: String!
+    name: String!
+    email: String!
     password: String!
+    cellphone: Int!
 }
-type Create {
-    ID: Int!
-    message: String!
-}
+
 input UserDataUpdate {
     username: String!
 }
@@ -34,7 +35,7 @@ export const UsuariosQueries = `
     getUsuario(id: Int!): Users1!
 `;
 export const UsuariosMutations = `
-    crearUser(user: UserDataCreate!): Create
+    crearUser(user: UserDataCreate!): String!
     actualizarUser(id: Int!, user: UserDataUpdate!): UpdateMessage!
     loginUser(user: UserDataLogin!): LoginMessage!
 `;
