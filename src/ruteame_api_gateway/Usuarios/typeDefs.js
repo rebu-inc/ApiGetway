@@ -20,12 +20,11 @@ type UpdateMessage {
     message: String!
 }
 input UserDataLogin {
-    username: String!
+    email: String!
     password: String!
 }
 type LoginMessage {
-    token: String
-    message: String!
+    token: String!
 }
 `;
 
@@ -33,6 +32,7 @@ type LoginMessage {
 export const UsuariosQueries = `
     getUsuarios: [Users1]!
     getUsuario(id: Int!): Users1!
+    getToken: LoginMessage!
 `;
 export const UsuariosMutations = `
     crearUser(user: UserDataCreate!): String!
